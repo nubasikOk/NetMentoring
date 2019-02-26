@@ -19,11 +19,7 @@ namespace StringParser
             }
             catch(FormatException)
             {
-                throw new FormatException("string is non-format");
-            }
-            catch(Exception)
-            {
-                throw new Exception("Something is Wrong!");
+                throw new FormatException("string is not integer value");
             }
             
         }
