@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task3", "Task3\Task3.csproj", "{03C3A501-A6E4-4CF5-9DC5-E60002B61400}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringParser", "StringParser\StringParser.csproj", "{3F53BF65-8158-4AED-A453-D56700E1AEFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03C3A501-A6E4-4CF5-9DC5-E60002B61400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C3A501-A6E4-4CF5-9DC5-E60002B61400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C3A501-A6E4-4CF5-9DC5-E60002B61400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C3A501-A6E4-4CF5-9DC5-E60002B61400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F53BF65-8158-4AED-A453-D56700E1AEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F53BF65-8158-4AED-A453-D56700E1AEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F53BF65-8158-4AED-A453-D56700E1AEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F53BF65-8158-4AED-A453-D56700E1AEFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBA90901-5DFF-4CD1-8E3C-A629C0619A97}
+	EndGlobalSection
+EndGlobal
