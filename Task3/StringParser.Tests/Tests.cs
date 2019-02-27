@@ -11,6 +11,8 @@ namespace StringParser.Tests
         [TestCase("-1")]
         [TestCase("125")]
         [TestCase("00123")]
+        [TestCase("2312456798764")]
+        [TestCase("-2312456798764")]
         public void TestParser_Return_Correct_Results(string s)
         {
             _parser = new Parser(s);
@@ -18,7 +20,9 @@ namespace StringParser.Tests
         }
         [TestCase("testMe")]
         [TestCase("123av")]
+        [TestCase("mm11+2")]
         [TestCase("  ")]
+        
         public void TestParser_CatchingExceptions(string s)
         {
             _parser = new Parser(s);
