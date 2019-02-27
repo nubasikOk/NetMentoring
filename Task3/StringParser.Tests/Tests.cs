@@ -36,8 +36,15 @@ namespace StringParser.Tests
             _parser = new Parser(null);
             Assert.Throws<Exception>(() => _parser.GetInteger());
         }
+        [TestCase("-1")]
+        public void TestParser_Negative_Numbers(string s)
+        {
+            
+            _parser = new Parser(s);
+            Assert.IsTrue(_parser.GetInteger() < 0);
+            Assert.IsTrue(_parser.IsNegative(s));
+        }
 
-        
     }
 
 }

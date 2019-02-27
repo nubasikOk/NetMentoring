@@ -23,7 +23,7 @@ namespace StringParser
             try
             {
                 
-                    if (IsNegative())
+                    if (IsNegative(_stringToParse))
                     {
                         _isThisNegative = true;
                         _stringToParse = _stringToParse.Substring(1);
@@ -62,9 +62,9 @@ namespace StringParser
                 return false;
         }
      
-        public bool IsNegative()
+        public bool IsNegative(string s)
         {
-           return _stringToParse.First() == '-';
+           return s.First() == '-';
         }
     }
 }
