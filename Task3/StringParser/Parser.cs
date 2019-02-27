@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace StringParser
 {
     public class Parser
     {
+        private readonly char[] _stringNumbers = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        private bool _isThisNegative = false;
         string _stringToParse;
+        
         public Parser(string stringToParse)
         {
             _stringToParse = stringToParse;
@@ -12,16 +17,47 @@ namespace StringParser
 
         public int GetInteger()
         {
+            
+            int result = 0;
             try
             {
-                int result = Convert.ToInt32(_stringToParse);
-                return result;
+                
+                if (IsNegative())
+                {
+                    _isThisNegative = true;
+                    _stringToParse = _stringToParse.Substring(1);
+                }
+                foreach (var item in _stringToParse)
+                {
+                                  
+                    if (isValid(item))
+                    {
+                        result = result * 10 + (item - '0');
+                    }
+                        
+                    else throw new FormatException();
+                }
+
+                return _isThisNegative ? -1*result: result;
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 throw new FormatException("string is not integer value");
             }
-            
+        }
+        public bool isValid(char item)
+        {
+            IEnumerable<char> sQuery = _stringNumbers.Where(c => c == item);
+            if (sQuery.Count() > 0)
+                return true;
+            else
+                return false;
+        }
+     
+        public bool IsNegative()
+        {
+           return _stringToParse.First() == '-';
         }
     }
 }
+
