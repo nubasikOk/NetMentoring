@@ -33,14 +33,11 @@ namespace StringParser.Tests
         {
             _parser = new Parser(s);
             Assert.Throws<Exception>(() => _parser.GetInteger());
-        }
-
-        [Test]
-        public void TestParser_Null_string()
-        {
             _parser = new Parser(null);
             Assert.Throws<Exception>(() => _parser.GetInteger());
         }
+
+        
     }
 
 }
