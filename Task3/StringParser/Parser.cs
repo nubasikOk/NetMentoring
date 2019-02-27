@@ -12,37 +12,45 @@ namespace StringParser
         
         public Parser(string stringToParse)
         {
+            
             _stringToParse = stringToParse;
         }
 
-        public int GetInteger()
+        public long GetInteger()
         {
             
-            int result = 0;
+            long result = 0;
             try
             {
                 
-                if (IsNegative())
-                {
-                    _isThisNegative = true;
-                    _stringToParse = _stringToParse.Substring(1);
-                }
-                foreach (var item in _stringToParse)
-                {
-                                  
-                    if (isValid(item))
+                    if (IsNegative())
                     {
-                        result = result * 10 + (item - '0');
+                        _isThisNegative = true;
+                        _stringToParse = _stringToParse.Substring(1);
                     }
-                        
-                    else throw new FormatException();
-                }
+                    foreach (var item in _stringToParse)
+                    {
+
+                        if (isValid(item))
+                        {
+                            result = result * 10 + (item - '0');
+                        }
+
+                        else throw new FormatException();
+                    }
+                
+                
 
                 return _isThisNegative ? -1*result: result;
+                
             }
             catch (FormatException)
             {
-                throw new FormatException("string is not integer value");
+                throw new FormatException("input string is not integer value");
+            }
+            catch (Exception error)
+            {
+                throw new Exception("Parser can`t convert input string", error);
             }
         }
         public bool isValid(char item)
