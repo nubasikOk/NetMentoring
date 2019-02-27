@@ -12,8 +12,7 @@ namespace StringParser.Tests
         [TestCase("125")]
         [TestCase("00123")]
         [TestCase("2312456798764")]
-        [TestCase("-23124567987642")]
-       
+        [TestCase("-23124567987642")]       
         public void TestParser_Return_Correct_Results(string s)
         {
             _parser = new Parser(s);
@@ -22,20 +21,26 @@ namespace StringParser.Tests
         [TestCase("testMe")]
         [TestCase("123av")]
         [TestCase("mm11+2")]
-        [TestCase("  ")]
+        [TestCase("  ")]        
         public void TestParser_Catching_Format_Exceptions(string s)
         {
             _parser = new Parser(s);
             Assert.Throws<FormatException>(() => _parser.GetInteger());
         }
-        
-        [Test]
-        public void TestParser_Empty_string()
+
+        [TestCase("")]
+        public void TestParser_Empty_string(string s)
         {
-            _parser = new Parser(String.Empty);
+            _parser = new Parser(s);
             Assert.Throws<Exception>(() => _parser.GetInteger());
         }
 
+        [Test]
+        public void TestParser_Null_string()
+        {
+            _parser = new Parser(null);
+            Assert.Throws<Exception>(() => _parser.GetInteger());
+        }
     }
 
 }
